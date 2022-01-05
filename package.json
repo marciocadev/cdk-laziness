@@ -1,11 +1,19 @@
 {
   "name": "cdk-laziness",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marciocadev/cdk-lazyless.git"
+  },
+  "bin": {
+    "cdk-laziness": "lib/index.js"
+  },
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
     "default": "npx projen default",
+    "docgen": "npx projen docgen",
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "post-compile": "npx projen post-compile",
@@ -21,24 +29,48 @@
     "projen": "npx projen"
   },
   "devDependencies": {
+    "@types/cli-color": "^2.0.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^8.1.3",
     "@types/jest": "^27.4.0",
     "@types/node": "^12",
+    "@types/node-notifier": "^8.0.2",
+    "@types/typescript": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "eslint": "^8",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7",
     "jest-junit": "^13",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
+    "prettier": "^2.5.1",
     "projen": "^0.50.7",
     "standard-version": "^9",
     "ts-jest": "^27.1.2",
     "ts-node": "^9",
+    "typedoc": "^0.21.4",
     "typescript": "^4.5.4"
   },
+  "dependencies": {
+    "cli-color": "^2.0.1",
+    "commander": "^8.3.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.2.0",
+    "node-notifier": "^10.0.0",
+    "projen": "^0.50.7"
+  },
+  "bundledDependencies": [
+    "cli-color",
+    "commander",
+    "fs-extra",
+    "inquirer",
+    "node-notifier"
+  ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",
@@ -52,8 +84,7 @@
     "coverageReporters": [
       "json",
       "lcov",
-      "clover",
-      "text"
+      "clover"
     ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [

@@ -4,9 +4,44 @@ const project = new typescript.TypeScriptProject({
   name: "cdk-laziness",
   projenrcTs: true,
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  codeCov: true,
+  gitpod: true,
+  prettier: true,
+  eslint: true,
+  jestOptions: {
+    coverageText: false,
+  },
+  docgen: true,
+  tsconfig: {
+    compilerOptions: {
+      lib: ["dom", "es2019"],
+      resolveJsonModule: true,
+    },
+  },
+
+  repository: "https://github.com/marciocadev/cdk-lazyless.git",
+  release: true,
+  releaseToNpm: true,
+
+  bin: {
+    "cdk-laziness": "lib/index.js",
+  },
+
+  deps: ["projen"],
+  devDeps: [
+    "@types/node-notifier",
+    "@types/typescript",
+    "@types/inquirer",
+    "@types/cli-color",
+    "@types/fs-extra",
+  ],
+  bundledDeps: [
+    "cli-color",
+    "node-notifier",
+    "commander",
+    "inquirer",
+    "fs-extra",
+  ],
 });
+
 project.synth();
