@@ -90,15 +90,6 @@
         }
       ]
     },
-    "docgen": {
-      "name": "docgen",
-      "description": "Generate TypeScript API reference docs/",
-      "steps": [
-        {
-          "exec": "typedoc src --disableSources --out docs/"
-        }
-      ]
-    },
     "eslint": {
       "name": "eslint",
       "description": "Runs eslint against the codebase",
@@ -122,12 +113,7 @@
     },
     "post-compile": {
       "name": "post-compile",
-      "description": "Runs after successful compilation",
-      "steps": [
-        {
-          "spawn": "docgen"
-        }
-      ]
+      "description": "Runs after successful compilation"
     },
     "pre-compile": {
       "name": "pre-compile",
@@ -228,7 +214,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/cli-color @types/fs-extra @types/inquirer @types/jest @types/node-notifier @types/node @types/typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit json-schema npm-check-updates prettier standard-version ts-jest ts-node typedoc typescript cli-color commander fs-extra inquirer node-notifier"
+          "exec": "yarn upgrade @types/cli-color @types/fs-extra @types/inquirer @types/jest @types/node-notifier @types/node @types/typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit json-schema npm-check-updates prettier standard-version ts-jest ts-node typescript cli-color commander fs-extra inquirer node-notifier"
         },
         {
           "exec": "npx projen"
