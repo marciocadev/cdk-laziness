@@ -11,7 +11,7 @@ const project = new typescript.TypeScriptProject({
   jestOptions: {
     coverageText: false,
   },
-  docgen: true,
+  docgen: false,
   tsconfig: {
     compilerOptions: {
       lib: ["dom", "es2019"],
